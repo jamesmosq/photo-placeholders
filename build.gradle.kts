@@ -15,3 +15,23 @@ dependencies {
         testFramework(TestFrameworkType.Platform)
     }
 }
+
+// Plugin signing: https://plugins.jetbrains.com/docs/intellij/plugin-signing.html
+// Keys never live in the repo. CI supplies them as environment variables (see release.yml);
+// locally they are read from ~/.photo-placeholders-signing/ (chain.crt, private.pem, password.txt).
+val signingDir = File(System.getProperty("user.home"), ".photo-placeholders-signing")
+
+intellijPlatform {
+    signing {
+        if (providers.environmentVariable("CERTIFICATE_CHAIN").isPresent) {
+            certificateChain = providers.environmentVariable("CERTIFICATE_CHAIN")
+            privateKey = providers.environmentVariable("PRIVATE_KEY")
+            password = providers.environmentVariable("PRIVATE_KEY_PASSWORD")
+        } else if (File(signingDir, "private.pem").exists()) {
+            certificateChainFile = File(signingDir, "chain.crt")
+            privateKeyFile = File(signingDir, "private.pem")
+            password = providers.fileContents(layout.file(providers.provider { File(signingDir, "password.txt") }))
+                .asText.map { it.trim() }
+        }
+    }
+}

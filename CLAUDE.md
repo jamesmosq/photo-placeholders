@@ -32,7 +32,11 @@ Owner: James Mosquera (jamesmosq). Built on the official IntelliJ Platform Plugi
 ./gradlew verifyPlugin   # JetBrains Plugin Verifier (must pass before any release)
 ./gradlew runIde         # sandbox IDE for manual testing
 ./gradlew buildPlugin    # build/distributions/*.zip
+./gradlew signPlugin     # build/distributions/*-signed.zip (run verifyPluginSignature separately)
 ```
+
+Signing keys live OUTSIDE the repo in `~/.photo-placeholders-signing/` (chain.crt, private.pem, password.txt);
+CI uses the CERTIFICATE_CHAIN / PRIVATE_KEY / PRIVATE_KEY_PASSWORD env vars. Never commit or print them.
 
 ## Layout
 - `PicsumOptions.kt` — URL + snippet building (pure Kotlin, unit tested)
