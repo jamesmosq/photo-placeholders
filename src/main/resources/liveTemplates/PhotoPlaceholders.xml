@@ -1,0 +1,46 @@
+<templateSet group="Photo Placeholders">
+    <template name="picsum" value="https://picsum.photos/$W$/$H$$END$"
+              description="Random placeholder photo URL (picsum.photos)" toReformat="false" toShortenFQNames="false">
+        <variable name="W" expression="" defaultValue="&quot;600&quot;" alwaysStopAt="true"/>
+        <variable name="H" expression="" defaultValue="&quot;400&quot;" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true"/>
+            <option name="HTML" value="true"/>
+            <option name="CSS" value="true"/>
+            <option name="JAVA_SCRIPT" value="true"/>
+            <option name="PHP" value="true"/>
+            <option name="MARKDOWN" value="true"/>
+        </context>
+    </template>
+    <template name="picsumimg" value="&lt;img src=&quot;https://picsum.photos/$W$/$H$&quot; width=&quot;$W$&quot; height=&quot;$H$&quot; alt=&quot;$ALT$&quot;&gt;$END$"
+              description="Placeholder photo img tag (picsum.photos)" toReformat="false" toShortenFQNames="false">
+        <variable name="W" expression="" defaultValue="&quot;600&quot;" alwaysStopAt="true"/>
+        <variable name="H" expression="" defaultValue="&quot;400&quot;" alwaysStopAt="true"/>
+        <variable name="ALT" expression="" defaultValue="&quot;Placeholder image&quot;" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true"/>
+            <option name="HTML" value="true"/>
+            <option name="JAVA_SCRIPT" value="true"/>
+            <option name="PHP" value="true"/>
+        </context>
+    </template>
+    <template name="picsumbg" value="background-image: url(&quot;https://picsum.photos/$W$/$H$&quot;);$END$"
+              description="Placeholder photo CSS background (picsum.photos)" toReformat="false" toShortenFQNames="false">
+        <variable name="W" expression="" defaultValue="&quot;1200&quot;" alwaysStopAt="true"/>
+        <variable name="H" expression="" defaultValue="&quot;600&quot;" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true"/>
+            <option name="CSS" value="true"/>
+        </context>
+    </template>
+    <template name="picsummd" value="![$ALT$](https://picsum.photos/$W$/$H$)$END$"
+              description="Placeholder photo in Markdown (picsum.photos)" toReformat="false" toShortenFQNames="false">
+        <variable name="ALT" expression="" defaultValue="&quot;Placeholder&quot;" alwaysStopAt="true"/>
+        <variable name="W" expression="" defaultValue="&quot;600&quot;" alwaysStopAt="true"/>
+        <variable name="H" expression="" defaultValue="&quot;400&quot;" alwaysStopAt="true"/>
+        <context>
+            <option name="OTHER" value="true"/>
+            <option name="MARKDOWN" value="true"/>
+        </context>
+    </template>
+</templateSet>

@@ -1,0 +1,58 @@
+<!-- https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- The id can never change once published. -->
+    <id>com.jamesmosquera.photoplaceholders</id>
+    <name>Photo Placeholders</name>
+    <vendor email="jamesmosqr@gmail.com" url="https://www.jamesmosquera.com">James Mosquera</vendor>
+
+    <description><![CDATA[
+    <p>Insert real placeholder photos into HTML, CSS, Markdown, JSX or any file, powered by the free
+    <a href="https://picsum.photos">picsum.photos</a> service.</p>
+
+    <h3>Features</h3>
+    <ul>
+      <li>Any size or square images: random, a specific image <b>id</b>, or a stable <b>seed</b>.</li>
+      <li>Grayscale and blur (1–10) filters, <code>.jpg</code> / <code>.webp</code> extensions.</li>
+      <li>Automatic <code>?random=N</code> so every inserted image is different, even with multiple carets.</li>
+      <li>Output as URL, HTML <code>&lt;img&gt;</code>, CSS background, Markdown, JSX or a <code>src</code> attribute.</li>
+      <li>Live preview and a browsable gallery to pick a specific photo and see its author.</li>
+      <li>Remembers your last settings; one-click insert with them.</li>
+      <li>Live templates: <code>picsum</code>, <code>picsumimg</code>, <code>picsumbg</code>, <code>picsummd</code>.</li>
+    </ul>
+
+    <h3>Usage</h3>
+    <p><b>Code | Generate…</b> (<kbd>Alt+Insert</kbd> / <kbd>⌘N</kbd>) → <b>Placeholder Photo…</b>,
+    or right-click in the editor. Assign your own shortcut under <i>Settings | Keymap</i>.</p>
+
+    <h3>Privacy</h3>
+    <p>The plugin collects no data. It only downloads images and image metadata from picsum.photos
+    when you open the generator or insert an image.</p>
+
+    <p>Unofficial plugin, not affiliated with picsum.photos. Photos come from
+    <a href="https://unsplash.com">Unsplash</a> via picsum.photos.
+    Source code: <a href="https://github.com/jamesmosq/photo-placeholders">github.com/jamesmosq/photo-placeholders</a>.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.PhotoPlaceholdersBundle</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- https://plugins.jetbrains.com/docs/intellij/providing-live-templates.html -->
+        <defaultLiveTemplates file="/liveTemplates/PhotoPlaceholders.xml"/>
+    </extensions>
+
+    <!-- https://plugins.jetbrains.com/docs/intellij/action-system.html
+         Text and description come from the resource bundle (action.<id>.text / .description). -->
+    <actions>
+        <action id="PhotoPlaceholders.Insert"
+                class="com.jamesmosquera.photoplaceholders.actions.InsertPicsumAction">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="PhotoPlaceholders.QuickInsert"
+                class="com.jamesmosquera.photoplaceholders.actions.QuickInsertPicsumAction">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
