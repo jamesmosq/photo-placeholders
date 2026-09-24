@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-24
+
 ### Added
 
 - Generator dialog to insert placeholder photos from picsum.photos: random, by image id or by seed.
@@ -14,3 +16,6 @@
 - Quick insert with the last used settings.
 - Live templates: `picsum`, `picsumimg`, `picsumbg`, `picsummd`.
 - English UI with Spanish translation.
+
+[Unreleased]: https://github.com/jamesmosq/photo-placeholders/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/jamesmosq/photo-placeholders/commits/v0.1.0
