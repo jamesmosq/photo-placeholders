@@ -26,7 +26,9 @@
 
     <h3>Privacy</h3>
     <p>The plugin collects no data. It only downloads images and image metadata from picsum.photos
-    when you open the generator or insert an image.</p>
+    while the generator preview or gallery is open; inserting an image never uses the network.
+    As with any web request, picsum.photos can see your IP address and the IDE name sent as the
+    User-Agent.</p>
 
     <p>Unofficial plugin, not affiliated with picsum.photos. Photos come from
     <a href="https://unsplash.com">Unsplash</a> via picsum.photos.
