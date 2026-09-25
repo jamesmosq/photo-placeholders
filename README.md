@@ -10,10 +10,8 @@
 
 <p align="center">
   <a href="https://github.com/jamesmosq/photo-placeholders/actions/workflows/build.yml"><img src="https://github.com/jamesmosq/photo-placeholders/actions/workflows/build.yml/badge.svg" alt="Build"></a>
-  <!-- After the first Marketplace release, replace MARKETPLACE_ID and uncomment:
-  <a href="https://plugins.jetbrains.com/plugin/MARKETPLACE_ID"><img src="https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg" alt="Version"></a>
-  <a href="https://plugins.jetbrains.com/plugin/MARKETPLACE_ID"><img src="https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg" alt="Downloads"></a>
-  -->
+  <a href="https://plugins.jetbrains.com/plugin/34516"><img src="https://img.shields.io/jetbrains/plugin/v/34516.svg" alt="Version"></a>
+  <a href="https://plugins.jetbrains.com/plugin/34516"><img src="https://img.shields.io/jetbrains/plugin/d/34516.svg" alt="Downloads"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
 </p>
 
